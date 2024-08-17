@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: black;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: white;
+            color: black;
+            font-family: "Poppins", sans-serif;
+        }
+
+        header {
+            position: sticky;
+            top: 3px;
+            background-color: black;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100px;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 25px;
+        }
+
+        nav ul li a {
+            list-style: none;
+            color: white;
+            text-decoration: none;
+        }
+
+        ul li:hover {
+            cursor: pointer;
+            font-size: 1.09rem;
+            border-top: 2px solid #ea0909;
+            border-radius: 12%;
+        }
+
+        .left img {
+            height: 80px;
+        }
+
+        .left img:hover {
+            animation: vibrate 0.5s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes vibrate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            10% {
+                transform: rotate(-1deg);
+            }
+
+            20% {
+                transform: rotate(1deg);
+            }
+
+            30% {
+                transform: rotate(0deg);
+            }
+
+            40% {
+                transform: rotate(1deg);
+            }
+
+            50% {
+                transform: rotate(-1deg);
+            }
+
+            60% {
+                transform: rotate(0deg);
+            }
+
+            70% {
+                transform: rotate(-1deg);
+            }
+
+            80% {
+                transform: rotate(1deg);
+            }
+
+            90% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(-1deg);
+            }
+        }
+
+        .firstSection {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 625px;
+        }
+
+        .leftSection,
+        .rightSection {
+            flex: 1;
+            padding: 20px;
+        }
+        .rightSection img{
+            width: 400px;
+            /* height: 400px; */
+        }
+
+        .leftSection {
+            font-size: 240%;
+        }
+        div.leftSection p {
+            transition-property: all;
+            transition-duration: 2s;
+            transition-timing-function: ease-in-out;
+            transition-delay: .1s;
+        }
+
+        div.leftSection p:hover {
+            background-color: pink;
+            padding-left: 125px;
+        }
+
+        .rightSection img {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        span.purple {
+            color: #ea0909;
+        }
+
+        .btn1,
+        .btn2 {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px 30px;
+            text-decoration: none;
+            color: black;
+            transition: background-size .4s, background-position 0s .4s;
+        }
+
+        .btn1 {
+            --c: #ff7373;
+            box-shadow: 0 0 0 .1em inset var(--c);
+            --_g: linear-gradient(var(--c) 0 0) no-repeat;
+            background:
+                var(--_g) calc(var(--_p, 0%) - 100%) 0%,
+                var(--_g) calc(200% - var(--_p, 0%)) 0%,
+                var(--_g) calc(var(--_p, 0%) - 100%) 100%,
+                var(--_g) calc(200% - var(--_p, 0%)) 100%;
+            background-size: 50.5% calc(var(--_p, 0%)/2 + .5%);
+            outline-offset: .1em;
+        }
+
+        .btn2 {
+            --c: rgb(145, 136, 136);
+            box-shadow: 0 0 0 .1em inset var(--c);
+            --_g: linear-gradient(var(--c) 0 0) no-repeat;
+            background:
+                var(--_g) calc(var(--_p, 0%) - 100%) 0%,
+                var(--_g) calc(200% - var(--_p, 0%)) 0%,
+                var(--_g) calc(var(--_p, 0%) - 100%) 100%,
+                var(--_g) calc(200% - var(--_p, 0%)) 100%;
+            background-size: 50.5% calc(var(--_p, 0%)/2 + .5%);
+            outline-offset: .1em;
+        }
+
+        .btn1:hover,
+        .btn2:hover {
+            --_p: 100%;
+            transition: background-position .4s, background-size 0s;
+        }
+
+        #about {
+            padding: 50px 20px;
+        }
+
+        .rightSection img {
+
+            width: 50%;
+
+        }
+
+        p.section-text-p1 {
+            text-align: center;
+        }
+
+        h1.title {
+            text-align: center;
+            animation-name: blink;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes blink {
+            0% {
+                color: #ff7373;
+            }
+
+            50% {
+                color: transparent;
+            }
+
+            100% {
+                color: #ff7373;
+            }
+
+        }
+
+
+        .about-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 45px;
+            margin-bottom: 28px;
+        }
+.section-pic-container img{
+    width: 300px;
+    height: 300px;
+    display: block;
+    margin: 20px auto;
+}
+        .about-pic {
+            border-radius: 30px;
+            max-width: 100%;
+        }
+
+        img.icon {
+            height: 100px;
+            width: 100px;
+        }
+
+        .details-container {
+            padding: 9px;
+            flex: 1;
+            background: white;
+            border-radius: 34px;
+            border: rgb(163, 163, 163) 1px solid;
+            text-align: center;
+        }
+
+        #contact {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            height: 300px;
+        }
+
+        .contact-info-upper-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            border-radius: 2rem;
+            border: rgb(163, 163, 163) 1px solid;
+            margin: 2rem auto;
+            padding: 0.5rem;
+        }
+
+        .contact-info-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: 1rem;
+        }
+
+        .contact-info-container p {
+            font-size: larger;
+            cursor: default;
+        }
+        .contact-info-container img{
+            width: 50px;
+            height: 50px;
+        }
+
+        #quotes {
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer {
+            padding: 20px;
+            text-align: center;
+            background-color: #ea0909;
+        }
+
+        footer img {
+            margin: auto;
+            width: 50px;
+            transition: all 0.3s;
+        }
+
+        footer img:hover {
+            transform: scale(4);
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .leftSection,
+            .rightSection {
+                width: 100%;
+            }
+
+            .leftSection {
+                font-size: 180%;
+            }
+
+            .button a {
+                width: 80%;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+
+            nav {
+                flex-direction: column;
+            }
+
+            .btn1,
+            .btn2 {
+                padding: 10px 20px;
+            }
+
+            .left img {
+                height: 60px;
+            }
+
+            .icon {
+                height: 80px;
+            }
+
+            footer img {
+                width: 40px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left"><img src="logo.png" alt="Logo"></div>
+            <div class="right">
+                <ul>
+                    <li><a href="index.html" target="_blank">Home</a></li>
+                    <li><a href="#about-details-container">About</a></li>
+                    <li><a href="/">Services</a></li>
+                    <li><a href="/">Projects</a></li>
+                    <li><a href="#contact">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="firstSection">
+            <div class="leftSection">
+                <p>Hello, My name is <span class="purple">Devank Raghav</span><br>
+                    and I am a Web Developer.</p>
+                <div class="button">
+                    <a class="btn1" href="#"><span>Hire Me</span></a>
+                    <a class="btn2" href="#"><span>Get CV</span></a>
+                </div>
+            </div>
+            <div class="rightSection"><img src="img.png" alt="Profile Picture"></div>
+        </section>
+        <div class="b"></div>
+        <div class="a">
+            <p></p>
+        </div>
+        <hr>
+        <section id="about">
+            <p class="section-text-p1">Get to know more</p>
+            <h1 class="title">About Me</h1>
+            <div class="section-container">
+                <div class="section-pic-container">
+                    <img src="My_Pic.png" alt="Devank About Picture" class="about-pic" />
+                </div>
+                <div class="about-details-container" id="about-details-container">
+                    <div class="about-container">
+                        <div class="details-container">
+                            <img class="icon" src="experience.png" alt="Experience logo" />
+                            <h3>Experience</h3>
+                            <p>1+ years of Front-End Development</p>
+                        </div>
+                        <div class="details-container">
+                            <img class="icon" src="experience.png" alt="Education logo" />
+                            <h3>Education</h3>
+                            <p>
+                                10th with 87.2% <br />
+                                12th with 87.2%
+                            </p>
+                        </div>
+                    </div>
+                    <div class="text-container">
+                        <p>
+                            <strong>Devank</strong> is a passionate & enthusiastic computer science student driven by
+                            curiosity and
+                            motivation. He is currently learning C++, JavaScript and exploring many other fields.<br>
+                            "I am eager to enhance my skill set and I am open to guidance and training to achieve this.
+                            I believe that continuous learning is essential for my professional growth and I am
+                            committed to it." <br>
+                            If you have any kind of queries or want to ask anything from him, don't hesitate. He's quite
+                            friendly and helpful. Just text him on LinkedIn or mail him. <br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <section id="contact">
+            <p class="section-text-p1">Get in Touch</p>
+            <h1 class="title">Contact Me</h1>
+            <div class="contact-info-upper-container">
+                <div class="contact-info-container">
+                    <img src="email.png" alt="Email logo" class="email-icon">
+                    <p><a href="mailto:devankthakur065@gmail.com">devankthakur065@gmail.com</a></p>
+                </div>
+                <div class="contact-info-container">
+                    <img src="linkedin.png" alt="LinkedIn logo" class="linkedin-icon">
+                    <p><a
+                            href="https://www.linkedin.com/in/devank-raghav-6b0bb6307?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section id="quotes">
+            <hr>
+            <strong style="font-size: x-large;">Quotes</strong>
+            <p style="font-size: large;"> “<em>Every person you meet knows something you don’t; learn from
+                    them.</em>”<br> —H Jackson Brown Jr.</p><br>
+            <p style="font-size: large;"> “<em>Just remember, you can’t climb the ladder of success with your hands in
+                    your pockets.</em>”<br> – Arnold Schwarzenegger</p>
+        </section>
+        <hr>
+        <footer class="footer_area">
+            <div class="container">
+                <img src="logo.png" alt="Footer Logo"><br>
+                Copyright &copy; 2024 Devank Raghav, All Rights Reserved
+            </div>
+        </footer>
+    </main>
+</body>
+
+</html>
